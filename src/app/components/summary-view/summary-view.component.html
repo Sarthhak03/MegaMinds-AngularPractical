@@ -1,1 +1,21 @@
-<p>summary-view works!</p>
+<div class="card">
+    <p-table [value]="projectDetails" [resizableColumns]="true" styleClass="p-datatable-gridlines">
+        <ng-template pTemplate="header">
+            <tr>
+                <th pResizableColumn>Sampling Time</th>
+                <th pResizableColumn>Project Name</th>
+                <th pResizableColumn>Construction Count</th>
+                <th pResizableColumn>is Construction Completed</th>
+                <th pResizableColumn>Length of the road</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-projectDetail>
+            <tr>
+                <!-- <td>{{projectDetail.}}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.category}}</td>
+                <td>{{product.quantity}}</td> -->
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
