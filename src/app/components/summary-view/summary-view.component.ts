@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ConstructionData } from 'src/app/interfaces/constructionData.interface';
 import { ProjectDetails } from 'src/app/interfaces/projectDetails.interface';
+import { SimplifiedObject } from 'src/app/interfaces/simplifiedObject.interface';
 import { CommonService } from 'src/app/services/common.service';
-
-interface SimplifiedObject {
-  SamplingTime: string;
-  [key: string]: any;
-}
 
 @Component({
   selector: 'app-summary-view',
@@ -43,7 +39,7 @@ export class SummaryViewComponent implements OnInit {
 
   //simplifying nested json to a custom simple object
   mappingFunction(projectDetailsArray: ConstructionData[]) {
-    // const simplifiedArray = []
+    
     projectDetailsArray.forEach((x) => {
 
       const simplifiedObject: SimplifiedObject = {
@@ -54,9 +50,13 @@ export class SummaryViewComponent implements OnInit {
         simplifiedObject[x.Label] = x.Value
       })
 
+      //filling tabledata variable
       this.tableData.push(simplifiedObject);
     });
 
     console.log('simplifiedArray =>' , this.tableData);
+
+    //updating list stream for list-view
+    this.service.setProjectDetailsDataList(this.tableData);
   }
 }
