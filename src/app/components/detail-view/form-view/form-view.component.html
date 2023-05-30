@@ -1,1 +1,34 @@
-<p>form-view works!</p>
+<div>
+    <form [formGroup]="projectDetailForm">
+
+        <div class="input-group">
+            <label>Project Name : </label>
+            <input type="text" formControlName="projectName" class="form-control">
+        </div>
+
+        <div class="input-group">
+            <label>Construction Count : </label>
+            <input type="number" formControlName="constructionCount" class="form-control">
+        </div>
+
+        <div class="input-group">
+            <label>Is Construction completed : </label>
+            <input type="checkbox" formControlName="isConstructionCompleted" class="form-control">
+        </div>
+
+        <div class="input-group">
+            <label>Length of the road : </label>
+            <input type="number" formControlName="lengthOfRoad" class="form-control">
+        </div>
+
+        <div>
+            <button 
+            type="button"
+            (click)="onSave()">
+            Save
+            </button>
+        </div>
+
+    </form>
+
+</div>

@@ -23,9 +23,7 @@ export class SummaryViewComponent implements OnInit {
   getAllData() {
     this.service.getAllData().subscribe(
       (res) => {
-        const apiResponse = res;
         this.projectDetails = res.Datas;
-        console.log(this.projectDetails);
         this.mappingFunction(this.projectDetails);
       },
       (err) => {
