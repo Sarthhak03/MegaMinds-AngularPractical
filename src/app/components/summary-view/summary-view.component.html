@@ -1,5 +1,5 @@
 <div class="card">
-    <p-table [value]="projectDetails" [resizableColumns]="true" styleClass="p-datatable-gridlines">
+    <p-table [value]="tableData" [resizableColumns]="true" styleClass="p-datatable-gridlines">
         <ng-template pTemplate="header">
             <tr>
                 <th pResizableColumn>Sampling Time</th>
@@ -9,12 +9,13 @@
                 <th pResizableColumn>Length of the road</th>
             </tr>
         </ng-template>
-        <ng-template pTemplate="body" let-projectDetail>
+        <ng-template pTemplate="body" let-tableData>
             <tr>
-                <!-- <td>{{projectDetail.}}</td>
-                <td>{{product.name}}</td>
-                <td>{{product.category}}</td>
-                <td>{{product.quantity}}</td> -->
+                <td>{{tableData.SamplingTime}}</td>
+                <td>{{tableData['Project Name']}}</td>
+                <td>{{tableData['Construction Count']}}</td>
+                <td>{{tableData['Is Construction Completed']}}</td>
+                <td>{{tableData['Length of the road']}}</td>
             </tr>
         </ng-template>
     </p-table>
