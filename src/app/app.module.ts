@@ -9,12 +9,16 @@ import { SummaryViewComponent } from './components/summary-view/summary-view.com
 import { TabViewModule } from 'primeng/tabview';
 import { ButtonModule } from 'primeng/button';
 import {TableModule} from 'primeng/table';
+import { FormViewComponent } from './components/detail-view/form-view/form-view.component';
+import { ListViewComponent } from './components/detail-view/list-view/list-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DetailViewComponent,
-    SummaryViewComponent
+    SummaryViewComponent,
+    FormViewComponent,
+    ListViewComponent
   ],
   imports: [
     BrowserModule,
