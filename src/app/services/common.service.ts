@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { SimplifiedObject } from '../interfaces/simplifiedObject.interface';
 import { ConstructionData } from '../interfaces/constructionData.interface';
+import { saveAs } from 'file-saver';
 
 @Injectable({
   providedIn: 'root',
@@ -41,12 +42,15 @@ export class CommonService {
 
   //saving all data
   saveAllData(updatedData) {
-    const filePath = '/src/assets/data.json';
-    this.http.put(filePath, updatedData).subscribe(() => {
-      console.log('Data saved successfully!');
-      this.refreshView$.next(true);
-    });
-  }
+    // const filePath = '/src/assets/data.json';
+    // this.http.put(filePath, updatedData).subscribe(() => {
+    //   console.log('Data saved successfully!');
+    //   this.refreshView$.next(true);
+    // });
 
-  
+    const blob = new Blob([updatedData], { type: 'application/json' });
+    saveAs(blob, 'data.json');
+    this.refreshView$.next(true);
+    console.log('Data saved successfully!');
+  }
 }
