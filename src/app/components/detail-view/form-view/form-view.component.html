@@ -1,27 +1,30 @@
-<div>
+<div class="form-class">
     <form [formGroup]="projectDetailForm">
 
         <div class="input-group">
             <label>Project Name : </label>
-            <input type="text" formControlName="projectName" class="form-control">
+            <input type="text" formControlName="projectName" class="form-control" style="margin-left: 211px;
+            border: 2px solid black;">
         </div>
 
         <div class="input-group">
             <label>Construction Count : </label>
-            <input type="number" formControlName="constructionCount" class="form-control">
+            <input type="number" min="0" formControlName="constructionCount" class="form-control" style="margin-left: 169px;
+            border: 2px solid black;">
         </div>
 
         <div class="input-group">
             <label>Is Construction completed : </label>
-            <input type="checkbox" formControlName="isConstructionCompleted" class="form-control">
+            <input type="checkbox" formControlName="isConstructionCompleted" class="form-control" style="border: 2px solid black;">
         </div>
 
         <div class="input-group">
             <label>Length of the road : </label>
-            <input type="number" formControlName="lengthOfRoad" class="form-control">
+            <input type="number" min="0" formControlName="lengthOfRoad" class="form-control" style="margin-left: 175px;
+            border: 2px solid black;">
         </div>
 
-        <div>
+        <div style="text-align: right; margin-top: 20px;">
             <button 
             type="button"
             (click)="onSave()">

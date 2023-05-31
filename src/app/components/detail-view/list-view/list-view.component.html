@@ -1,6 +1,6 @@
 <div>
     <ng-container *ngIf="projectDataList$ | async as list">
-        <ul *ngIf="list.length > 0">
+        <ul *ngIf="list.length > 0" class="ulList">
             <ng-container *ngFor="let item of list">
                 <li class="borderlist">
                     {{item.SamplingTime}}
